@@ -1,0 +1,22 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+	ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    int sm=100,lr=999,ans=0;
+    for(int i=sm;i<=lr;i++)
+    {
+    	for(int j=sm;j<=lr;j++)
+    	{
+    		int pro=i*j;
+    		string str=to_string(pro);
+    	string rev = string(str.rbegin(),str.rend()); 
+    		if(str==rev)
+    		ans=max(ans,pro);
+		}
+	}
+	cout<<ans;
+    return 0;
+}
