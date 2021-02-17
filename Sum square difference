@@ -1,0 +1,17 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+	ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    int lsum=0,gsum=0;
+    for(int i=1;i<=100;i++)
+    {
+    	gsum+=pow(i,2);
+    	lsum+=i;
+	}
+	lsum=pow(lsum,2);
+	cout<<lsum-gsum;
+    return 0;
+}
