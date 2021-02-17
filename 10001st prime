@@ -1,0 +1,35 @@
+#include <bits/stdc++.h>
+using namespace std;
+void SieveOfEratosthenes(long long unsigned n)
+{
+    bool prime[n];
+    memset(prime, true, sizeof(prime));                //This is SieveOfEratosthenes
+ 
+    for (long long  p = 2; p * p <= n; p++)
+    {
+        if (prime[p] == true) 
+        {
+            for (long long  i = p * p; i <= n; i += p)      
+                prime[i] = false;                         
+        }
+    }
+    
+    
+    long long count=0;                      //initializing count as 0;
+    for (long long  p = 2; p <= n; p++)       //running the loop form 2 to n
+       {
+		 if (prime[p])                      //we have bool array in which all prime number set to true using sieve
+           count++;                         //increment the count because we found a prime number 
+           if(count==10001)                 // and as count reaches to 10001 we found our number 
+           {
+		   cout<<p;break;}                 // print the answer and also break form the loop
+        }
+}
+int main()
+{
+	ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    long long unsigned n=999999;
+    SieveOfEratosthenes(n);     //pass the value of n in sieve function
+    return 0;
+}
