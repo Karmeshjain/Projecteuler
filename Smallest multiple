@@ -1,0 +1,25 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+	ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    int i,j,flag=1;
+    for(i=1;;i++)                   //iterate until we got the number
+    {
+	flag=1;                 
+    for(j=2;j<=20;j++)         //check form 1 to 20 for that number
+    {
+    	if(i%j!=0)             //if the number is not evenly divisible we break loop and 
+    	{
+    		flag=0;break;         // initilize flag as 0 i.e. that number is not what we want
+		}
+    	
+	}
+    if(flag==1)                     //if any number we got that is evenly divisible i.e. flag value doesnt change we got that number we break through the loop and print the answer
+    break;
+	} // after ending of the loop as we jump to next number make flag also 1 again so that again inner loop conditions apply on it
+	cout<<i;
+    return 0;
+}
