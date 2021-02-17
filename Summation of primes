@@ -1,0 +1,29 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define llu long long unsigned
+void SieveOfEratosthenes(llu n)
+{
+    bool prime[n + 1];
+    memset(prime, true, sizeof(prime));
+ 
+    for (llu p = 2; p * p <= n; p++)
+    {
+        if (prime[p] == true) 
+        {
+            for (llu i = p * p; i <= n; i += p)
+                prime[i] = false;
+        }
+    }
+    llu sum=0;
+    for (llu p = 2; p <= n; p++)
+        if (prime[p])
+            sum+=p;
+           cout<<sum;
+}
+int main()
+{
+	ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    SieveOfEratosthenes(2000000);
+    return 0;
+}
