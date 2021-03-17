@@ -1,0 +1,39 @@
+#include <bits/stdc++.h> //KarmeshDuggar
+using namespace std;
+#define ll long long
+int main() 
+{ 
+  ios_base::sync_with_stdio(false);
+  cin.tie(NULL);
+  vector<int> arr(400);
+      arr[0] = 2;
+        int carry = 0;
+ 
+        for (int j = 1; j < 7; j++)
+        {
+            for (int i = 0; i < arr.size(); i++)
+            {
+            	
+                int tempno = arr[i] * 2;
+                if(tempno!=0)
+                cout<<tempno<<endl; 
+                if (tempno > 9)
+                {
+                    arr[i] = (tempno % 10) + carry;                    
+                    carry = 1;
+                }
+                else
+                {
+                    arr[i] = tempno + carry;                    
+                    carry = 0;
+                }
+            }
+        }        
+      int sum=0;
+        for (int i = 0; i < arr.size(); i++)        
+        {
+            sum += arr[i];            
+       }
+     // cout<<sum;
+ return 0; 
+} 
