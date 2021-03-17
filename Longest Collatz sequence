@@ -1,0 +1,23 @@
+#include <bits/stdc++.h> //KarmeshDuggar
+using namespace std;
+#define ll long long
+
+int main() 
+{ 
+  ios_base::sync_with_stdio(false);
+  cin.tie(NULL);
+  ll chain=0,val=0,maxchain=0;
+  for(ll i=1000000;i>1;i--)
+  {
+  	chain=0;
+  	for(ll j=i;j!=1;)
+  	{
+  		j%2==0?j=j/2:j=3*j+1;
+  		chain++;
+	}
+	if(chain>=maxchain)
+	{val=i;maxchain=chain;}
+  }
+  cout<<val;
+ return 0; 
+} 
