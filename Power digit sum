@@ -15,8 +15,8 @@ int main()
             {
             	
                 int tempno = arr[i] * 2;
-                if(tempno!=0)
-                cout<<tempno<<endl; 
+              //  if(tempno!=0)
+                //cout<<tempno<<endl; 
                 if (tempno > 9)
                 {
                     arr[i] = (tempno % 10) + carry;                    
@@ -34,6 +34,6 @@ int main()
         {
             sum += arr[i];            
        }
-     // cout<<sum;
+      cout<<sum;
  return 0; 
 } 
